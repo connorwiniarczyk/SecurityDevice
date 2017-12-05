@@ -1,0 +1,5 @@
+TODO:
+
+	Display module should reverse digit and mode displays (one should be on the left, the other on the right)
+
+	Pressing Reset should turn off display completely, not leave a random digit on.

@@ -50,3 +50,41 @@ module clkdiv(input logic clk, input logic reset, output logic sclk);
     else q <= q + 1;
 
 endmodule // clkdiv
+
+// counts up in binary from 0 to some maximum value
+module BinaryCounter(
+        input logic clk, reset, // clk and reset
+        output logic [$clog2(MAXVAL) - 1 : 0] out
+    );
+
+    parameter MAXVAL = 10;
+
+    logic [$clog2(MAXVAL):0] count;
+
+    always_ff @(posedge clk) begin : proc_
+        if(reset | count == MAXVAL) begin
+            count <= 0;
+        end else begin
+            count <= count + 1;
+        end
+    end
+
+    assign out = count;
+
+endmodule
+
+//Generates a 1 clock cycle long pulse every n clock cycles
+module BinaryPulseGenerator (
+    input logic clk, reset,   // clk and reset
+    output logic out         // output pulse
+);
+
+    parameter TIME = 10;
+
+    logic [$clog2(TIME) - 1 : 0] count;
+
+    BinaryCounter #(TIME) counter(clk, reset, count);
+
+    assign out = (count == TIME - 1);
+
+endmodule

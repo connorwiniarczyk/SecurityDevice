@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/UtiltyModules.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LevelToPulse
+INFO: [VRFC 10-311] analyzing module clkdiv
+INFO: [VRFC 10-311] analyzing module BinaryCounter
+WARNING: [VRFC 10-756] identifier MAXVAL is used before its declaration [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/UtiltyModules.sv:57]
+INFO: [VRFC 10-311] analyzing module BinaryPulseGenerator
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/TestBenches/BinaryPulseGenerator_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BinaryPulseGenerator_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/winiarcc/ECE/SecurityDevice/SecurityDevice.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
