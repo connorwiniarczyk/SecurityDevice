@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  "../../../DesignSources/UtiltyModules.sv"
+sv xil_defaultlib  "../../../LiveTests/Mock_KeyPadDecoder.sv"
+sv xil_defaultlib  "../../../DesignSources/sevenSegDec.sv"
+sv xil_defaultlib  "../../../DesignSources/KeyPadController.sv"
+sv xil_defaultlib  "../../../DesignSources/DisplayController.sv"
+sv xil_defaultlib  "../../../DesignSources/TopLevel.sv"
+sv xil_defaultlib  "../../../LiveTests/DisplayController_LiveTest.sv"
+sv xil_defaultlib  "../../../DesignSources/ControlFSM.sv"
+sv xil_defaultlib  "../../../TestBenches/Mock_KeyPadDecoder_tb.sv"
+sv xil_defaultlib  "../../../TestBenches/BinaryPulseGenerator_tb.sv"
+sv xil_defaultlib  "../../../TestBenches/BinaryCounter_tb.sv"
+sv xil_defaultlib  "../../../TestBenches/DigitStore_tb.sv"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

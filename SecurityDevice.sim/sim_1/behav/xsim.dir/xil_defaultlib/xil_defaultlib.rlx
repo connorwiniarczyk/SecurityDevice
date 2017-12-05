@@ -1,6 +1,15 @@
 0.4
 2016.2
+C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/ControlFSM.sv,1512464262,verilog,,,,,,,,,,,
+C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/DisplayController.sv,1512457101,verilog,,,,,,,,,,,
+C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv,1512467378,verilog,,,,,,,,,,,
+C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv,1512466119,verilog,,,,,,,,,,,
 C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/UtiltyModules.sv,1512459043,verilog,,,,,,,,,,,
-C:/Users/winiarcc/ECE/SecurityDevice/LiveTests/Mock_KeyPadDecoder.sv,1512459668,verilog,,,,,,,,,,,
+C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/sevenSegDec.sv,1512447226,verilog,,,,,,,,,,,
+C:/Users/winiarcc/ECE/SecurityDevice/LiveTests/DisplayController_LiveTest.sv,1512449923,verilog,,,,,,,,,,,
+C:/Users/winiarcc/ECE/SecurityDevice/LiveTests/Mock_KeyPadDecoder.sv,1512461203,verilog,,,,,,,,,,,
 C:/Users/winiarcc/ECE/SecurityDevice/SecurityDevice.sim/sim_1/behav/glbl.v,1464879896,verilog,,,,,,,,,,,
+C:/Users/winiarcc/ECE/SecurityDevice/TestBenches/BinaryCounter_tb.sv,1512453732,verilog,,,,,,,,,,,
+C:/Users/winiarcc/ECE/SecurityDevice/TestBenches/BinaryPulseGenerator_tb.sv,1512454669,verilog,,,,,,,,,,,
+C:/Users/winiarcc/ECE/SecurityDevice/TestBenches/DigitStore_tb.sv,1512467837,verilog,,,,,,,,,,,
 C:/Users/winiarcc/ECE/SecurityDevice/TestBenches/Mock_KeyPadDecoder_tb.sv,1512458967,verilog,,,,,,,,,,,

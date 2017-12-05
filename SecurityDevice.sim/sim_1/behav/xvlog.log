@@ -6,7 +6,28 @@ WARNING: [VRFC 10-756] identifier MAXVAL is used before its declaration [C:/User
 INFO: [VRFC 10-311] analyzing module BinaryPulseGenerator
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/LiveTests/Mock_KeyPadDecoder.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Mock_KeyPadDecoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/sevenSegDec.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sevenSegDec
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeyPadController
+INFO: [VRFC 10-311] analyzing module KeyPadDecoder
+INFO: [VRFC 10-311] analyzing module DigitStore
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/DisplayController.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Display
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TopLevel
+INFO: [VRFC 10-311] analyzing module PasswordStore
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/LiveTests/DisplayController_LiveTest.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DisplayController_LiveTest
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/ControlFSM.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlFSM
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/TestBenches/Mock_KeyPadDecoder_tb.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Mock_KeyPadDecoder_tb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/TestBenches/BinaryPulseGenerator_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BinaryPulseGenerator_tb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/TestBenches/BinaryCounter_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BinaryCounter_tb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/TestBenches/DigitStore_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DigitStore_tb
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/winiarcc/ECE/SecurityDevice/SecurityDevice.sim/sim_1/behav/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl

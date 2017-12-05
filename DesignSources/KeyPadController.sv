@@ -7,7 +7,7 @@ module KeyPadController(
         
         output logic [15:0] digits,           // 4 hexadecimal values indicating the digits entered
         output logic [3:0] digitsToDisplay,   // 4 binary values indicating which digits we want to turn on
-        output logic storageFull;             // goes high whenever 4 values have been entered
+        output logic storageFull,             // goes high whenever 4 values have been entered
         
         output logic enter, // sends a pulse whenever E "Enter" is pressed
         output logic newPassword // sends a pulse whenever A "NewPassword" is pressed
@@ -55,9 +55,9 @@ module KeyPadController(
     assign newPassword_wire[0] = (digit_wire == 4'hA);
 
     // all button pulses should be fed through a LevelToPulseConverter
-    LevelToPulse clear(clk, reset, clear_wire[0], clear_wire[1]);
-    LevelToPulse enter(clk, reset, enter_wire[0], enter_wire[1]);
-    LevelToPulse newPassword(clk, reset, newPassword_wire[0], newPassword_wire[1]);
+    LevelToPulse ltp_clear(clk, reset, clear_wire[0], clear_wire[1]);
+    LevelToPulse ltp_enter(clk, reset, enter_wire[0], enter_wire[1]);
+    LevelToPulse ltp_newPassword(clk, reset, newPassword_wire[0], newPassword_wire[1]);
   
 endmodule
 
