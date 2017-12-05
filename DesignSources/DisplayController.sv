@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module Display(
-		input  logic clk, 
+		input logic clk, reset,
 		input logic [15:0] Digits, [1:0] DispMode, [3:0] Valid,
 		output logic [7:0] anodes, [6:0] digits
 	);

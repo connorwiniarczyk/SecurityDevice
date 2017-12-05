@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log DisplayController_LiveTest.vds -m64 -mode batch -messageDb vivado.pb -notrace -source DisplayController_LiveTest.tcl
+EAStep vivado -log TopLevel.vds -m64 -mode batch -messageDb vivado.pb -notrace -source TopLevel.tcl

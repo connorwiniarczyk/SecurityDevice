@@ -1,0 +1,62 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
+| Date         : Tue Dec 05 03:41:26 2017
+| Host         : ECE419-1WCVM02 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file TopLevel_control_sets_placed.rpt
+| Design       : TopLevel
+| Device       : xc7a100t
+-------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |     9 |
+| Unused register locations in slices containing registers |    28 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              40 |           11 |
+| No           | No                    | Yes                    |              16 |            4 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              20 |            6 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++---------------------------------------------------+-----------------------------------+-------------------------------------+------------------+----------------+
+|                    Clock Signal                   |           Enable Signal           |           Set/Reset Signal          | Slice Load Count | Bel Load Count |
++---------------------------------------------------+-----------------------------------+-------------------------------------+------------------+----------------+
+|  display/Cnt_reg_n_0_[2]                          |                                   |                                     |                1 |              4 |
+|  keyPad/nolabel_line36/pulseGenerator/counter/CLK |                                   | reset_IBUF                          |                1 |              5 |
+|  clk_BUFG                                         |                                   |                                     |                3 |              5 |
+|  clk_BUFG                                         | keyPad/store/digits[0][4]_i_2_n_0 | keyPad/nolabel_line36/counter/SR[0] |                3 |              5 |
+|  clk_BUFG                                         | keyPad/store/digits[1][4]_i_1_n_0 | keyPad/nolabel_line36/counter/SR[0] |                1 |              5 |
+|  clk_BUFG                                         | keyPad/store/digits[2][4]_i_1_n_0 | keyPad/nolabel_line36/counter/SR[0] |                1 |              5 |
+|  clk_BUFG                                         | keyPad/store/digits_0             | keyPad/nolabel_line36/counter/SR[0] |                1 |              5 |
+|  clk_BUFG                                         |                                   | reset_IBUF                          |                3 |             11 |
+|  clk_raw_IBUF_BUFG                                |                                   |                                     |                7 |             31 |
++---------------------------------------------------+-----------------------------------+-------------------------------------+------------------+----------------+
+
+

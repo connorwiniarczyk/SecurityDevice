@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log DisplayController_LiveTest.vds -m64 -mode batch -messageDb vivado.pb -notrace -source DisplayController_LiveTest.tcl
+    with args -log TopLevel.vds -m64 -mode batch -messageDb vivado.pb -notrace -source TopLevel.tcl
 
 
 ****** Vivado v2016.2 (64-bit)
@@ -8,17 +8,17 @@
   **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
     ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
-source DisplayController_LiveTest.tcl -notrace
-Command: synth_design -top DisplayController_LiveTest -part xc7a100tcsg324-1
+source TopLevel.tcl -notrace
+Command: synth_design -top TopLevel -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10564 
+INFO: Helper process launched with PID 12940 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 313.609 ; gain = 106.645
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 313.949 ; gain = 106.652
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'DisplayController_LiveTest' [C:/Users/winiarcc/ECE/SecurityDevice/LiveTests/DisplayController_LiveTest.sv:1]
+INFO: [Synth 8-638] synthesizing module 'TopLevel' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv:4]
 INFO: [Synth 8-638] synthesizing module 'clkdiv' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/UtiltyModules.sv:33]
 	Parameter DIVFREQ bound to: 1000 - type: integer 
 	Parameter DIVBITS bound to: 30 - type: integer 
@@ -31,20 +31,43 @@ INFO: [Synth 8-638] synthesizing module 'sevenSegDec' [C:/Users/winiarcc/ECE/Sec
 INFO: [Synth 8-256] done synthesizing module 'sevenSegDec' (2#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/sevenSegDec.sv:23]
 WARNING: [Synth 8-87] always_comb on 'segCtrl_reg' did not result in combinational logic [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/DisplayController.sv:18]
 INFO: [Synth 8-256] done synthesizing module 'Display' (3#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/DisplayController.sv:3]
-WARNING: [Synth 8-3848] Net buzzer in module/entity DisplayController_LiveTest does not have driver. [C:/Users/winiarcc/ECE/SecurityDevice/LiveTests/DisplayController_LiveTest.sv:5]
-WARNING: [Synth 8-3848] Net keyPad_column in module/entity DisplayController_LiveTest does not have driver. [C:/Users/winiarcc/ECE/SecurityDevice/LiveTests/DisplayController_LiveTest.sv:6]
-INFO: [Synth 8-256] done synthesizing module 'DisplayController_LiveTest' (4#1) [C:/Users/winiarcc/ECE/SecurityDevice/LiveTests/DisplayController_LiveTest.sv:1]
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port buzzer
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_column[3]
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_column[2]
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_column[1]
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_column[0]
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_row[3]
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_row[2]
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_row[1]
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_row[0]
+INFO: [Synth 8-638] synthesizing module 'KeyPadController' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:3]
+WARNING: [Synth 8-387] label required on module instance [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:36]
+INFO: [Synth 8-638] synthesizing module 'Mock_KeyPadDecoder' [C:/Users/winiarcc/ECE/SecurityDevice/LiveTests/Mock_KeyPadDecoder.sv:3]
+INFO: [Synth 8-638] synthesizing module 'BinaryPulseGenerator' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/UtiltyModules.sv:77]
+	Parameter TIME bound to: 1000 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'BinaryCounter' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/UtiltyModules.sv:55]
+	Parameter MAXVAL bound to: 1000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'BinaryCounter' (4#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/UtiltyModules.sv:55]
+INFO: [Synth 8-256] done synthesizing module 'BinaryPulseGenerator' (5#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/UtiltyModules.sv:77]
+INFO: [Synth 8-638] synthesizing module 'BinaryCounter__parameterized0' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/UtiltyModules.sv:55]
+	Parameter MAXVAL bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'BinaryCounter__parameterized0' (5#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/UtiltyModules.sv:55]
+INFO: [Synth 8-638] synthesizing module 'LevelToPulse' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/UtiltyModules.sv:3]
+INFO: [Synth 8-256] done synthesizing module 'LevelToPulse' (6#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/UtiltyModules.sv:3]
+INFO: [Synth 8-256] done synthesizing module 'Mock_KeyPadDecoder' (7#1) [C:/Users/winiarcc/ECE/SecurityDevice/LiveTests/Mock_KeyPadDecoder.sv:3]
+INFO: [Synth 8-638] synthesizing module 'DigitStore' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:66]
+INFO: [Synth 8-256] done synthesizing module 'DigitStore' (8#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:66]
+WARNING: [Synth 8-3848] Net keyPad_column in module/entity KeyPadController does not have driver. [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:6]
+WARNING: [Synth 8-3848] Net enter in module/entity KeyPadController does not have driver. [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:11]
+WARNING: [Synth 8-3848] Net newPassword in module/entity KeyPadController does not have driver. [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:12]
+INFO: [Synth 8-256] done synthesizing module 'KeyPadController' (9#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:3]
+WARNING: [Synth 8-3848] Net buzzer in module/entity TopLevel does not have driver. [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv:8]
+INFO: [Synth 8-256] done synthesizing module 'TopLevel' (10#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv:4]
+WARNING: [Synth 8-3331] design KeyPadController has unconnected port keyPad_column[3]
+WARNING: [Synth 8-3331] design KeyPadController has unconnected port keyPad_column[2]
+WARNING: [Synth 8-3331] design KeyPadController has unconnected port keyPad_column[1]
+WARNING: [Synth 8-3331] design KeyPadController has unconnected port keyPad_column[0]
+WARNING: [Synth 8-3331] design KeyPadController has unconnected port enter
+WARNING: [Synth 8-3331] design KeyPadController has unconnected port newPassword
+WARNING: [Synth 8-3331] design KeyPadController has unconnected port keyPad_row[3]
+WARNING: [Synth 8-3331] design KeyPadController has unconnected port keyPad_row[2]
+WARNING: [Synth 8-3331] design KeyPadController has unconnected port keyPad_row[1]
+WARNING: [Synth 8-3331] design KeyPadController has unconnected port keyPad_row[0]
+WARNING: [Synth 8-3331] design Display has unconnected port reset
+WARNING: [Synth 8-3331] design TopLevel has unconnected port buzzer
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 349.871 ; gain = 142.906
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 351.273 ; gain = 143.977
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -53,8 +76,9 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin clkdiv:reset to constant 0 [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv:16]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 349.871 ; gain = 142.906
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 351.273 ; gain = 143.977
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -88,34 +112,38 @@ WARNING: [Vivado 12-584] No ports matched 'keyPad_row[7]'. [C:/Users/winiarcc/EC
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/winiarcc/ECE/SecurityDevice/Constraints/Constraints.xdc:235]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/Users/winiarcc/ECE/SecurityDevice/Constraints/Constraints.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/winiarcc/ECE/SecurityDevice/Constraints/Constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/DisplayController_LiveTest_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/DisplayController_LiveTest_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/winiarcc/ECE/SecurityDevice/Constraints/Constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TopLevel_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/TopLevel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 652.871 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 653.359 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "sclk" won't be mapped to RAM because address size (30) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "digits" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digits" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digits" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digits" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 WARNING: [Synth 8-327] inferring latch for variable 'segCtrl_reg' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/DisplayController.sv:18]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -129,18 +157,27 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     30 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
 	               30 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                5 Bit    Registers := 5     
 	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input     30 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 4     
 	   4 Input      7 Bit        Muxes := 4     
+	   2 Input      5 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
 	   4 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -170,6 +207,36 @@ Detailed RTL Component Info :
 	   4 Input      4 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 1     
+Module BinaryCounter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 1     
+Module BinaryCounter__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module LevelToPulse 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module DigitStore 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -182,24 +249,24 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 652.871 ; gain = 445.906
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "clkdiv/sclk" won't be mapped to RAM because address size (30) is larger than maximum supported(25)
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port buzzer
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_column[3]
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_column[2]
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_column[1]
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_column[0]
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_row[3]
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_row[2]
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_row[1]
-WARNING: [Synth 8-3331] design DisplayController_LiveTest has unconnected port keyPad_row[0]
+WARNING: [Synth 8-3331] design TopLevel has unconnected port buzzer
+WARNING: [Synth 8-3331] design TopLevel has unconnected port keyPad_column[3]
+WARNING: [Synth 8-3331] design TopLevel has unconnected port keyPad_column[2]
+WARNING: [Synth 8-3331] design TopLevel has unconnected port keyPad_column[1]
+WARNING: [Synth 8-3331] design TopLevel has unconnected port keyPad_column[0]
+WARNING: [Synth 8-3331] design TopLevel has unconnected port keyPad_row[3]
+WARNING: [Synth 8-3331] design TopLevel has unconnected port keyPad_row[2]
+WARNING: [Synth 8-3331] design TopLevel has unconnected port keyPad_row[1]
+WARNING: [Synth 8-3331] design TopLevel has unconnected port keyPad_row[0]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Parallel Reinference  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 653.359 ; gain = 446.063
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -209,18 +276,10 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'display/segCtrl_reg[0]' (LD) to 'display/segCtrl_reg[1]'
-INFO: [Synth 8-3886] merging instance 'display/segCtrl_reg[1]' (LD) to 'display/segCtrl_reg[3]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\display/segCtrl_reg[3] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\display/segCtrl_reg[2] )
-WARNING: [Synth 8-3332] Sequential element (display/segCtrl_reg[3]) is unused and will be removed from module DisplayController_LiveTest.
-WARNING: [Synth 8-3332] Sequential element (display/segCtrl_reg[2]) is unused and will be removed from module DisplayController_LiveTest.
-WARNING: [Synth 8-3332] Sequential element (display/segCtrl_reg[1]) is unused and will be removed from module DisplayController_LiveTest.
-WARNING: [Synth 8-3332] Sequential element (display/segCtrl_reg[0]) is unused and will be removed from module DisplayController_LiveTest.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 653.359 ; gain = 446.063
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -234,10 +293,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -249,16 +308,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.359 ; gain = 446.063
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -275,7 +334,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -288,7 +347,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -300,25 +359,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -334,45 +393,55 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     1|
+|1     |BUFG   |     2|
 |2     |CARRY4 |     8|
 |3     |LUT1   |    31|
-|4     |LUT2   |     1|
-|5     |LUT3   |    14|
-|6     |LUT4   |    33|
-|7     |LUT5   |     2|
-|8     |LUT6   |     2|
-|9     |FDRE   |    34|
-|10    |IBUF   |     2|
-|11    |OBUF   |    15|
-|12    |OBUFT  |     5|
+|4     |LUT2   |     4|
+|5     |LUT3   |     9|
+|6     |LUT4   |    44|
+|7     |LUT5   |    13|
+|8     |LUT6   |    21|
+|9     |FDCE   |    16|
+|10    |FDRE   |    56|
+|11    |LD     |     4|
+|12    |IBUF   |     2|
+|13    |OBUF   |    15|
+|14    |OBUFT  |     5|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+----------+--------+------+
-|      |Instance  |Module  |Cells |
-+------+----------+--------+------+
-|1     |top       |        |   148|
-|2     |  clkdiv  |clkdiv  |   106|
-|3     |  display |Display |    19|
-+------+----------+--------+------+
++------+---------------------+------------------------------+------+
+|      |Instance             |Module                        |Cells |
++------+---------------------+------------------------------+------+
+|1     |top                  |                              |   230|
+|2     |  clkdiv             |clkdiv                        |   106|
+|3     |  display            |Display                       |    28|
+|4     |  keyPad             |KeyPadController              |    72|
+|5     |    nolabel_line36   |Mock_KeyPadDecoder            |    44|
+|6     |      LevelToPulse   |LevelToPulse                  |     4|
+|7     |      counter        |BinaryCounter__parameterized0 |    11|
+|8     |      pulseGenerator |BinaryPulseGenerator          |    29|
+|9     |        counter      |BinaryCounter                 |    29|
+|10    |    store            |DigitStore                    |    28|
++------+---------------------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 652.871 ; gain = 445.906
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 653.359 ; gain = 446.063
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 652.871 ; gain = 113.609
-Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 652.871 ; gain = 445.906
+Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 653.359 ; gain = 114.805
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 653.359 ; gain = 446.063
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 4 instances were transformed.
+  LD => LDCE: 4 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-27 Infos, 34 Warnings, 9 Critical Warnings and 0 Errors encountered.
+41 Infos, 37 Warnings, 9 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 652.871 ; gain = 420.531
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 652.871 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Dec 05 00:00:11 2017...
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 653.359 ; gain = 420.809
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 653.359 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 05 03:41:00 2017...

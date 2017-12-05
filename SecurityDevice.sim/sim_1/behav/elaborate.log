@@ -1,6 +1,6 @@
 Vivado Simulator 2016.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 6cde66dc7f614c98b52c68b3aeb0d52e --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot BinaryPulseGenerator_tb_behav xil_defaultlib.BinaryPulseGenerator_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 6cde66dc7f614c98b52c68b3aeb0d52e --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Mock_KeyPadDecoder_tb_behav xil_defaultlib.Mock_KeyPadDecoder_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -9,6 +9,9 @@ Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.BinaryCounter(MAXVAL=10)
 Compiling module xil_defaultlib.BinaryPulseGenerator
-Compiling module xil_defaultlib.BinaryPulseGenerator_tb
+Compiling module xil_defaultlib.BinaryCounter(MAXVAL=16)
+Compiling module xil_defaultlib.LevelToPulse
+Compiling module xil_defaultlib.Mock_KeyPadDecoder
+Compiling module xil_defaultlib.Mock_KeyPadDecoder_tb
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot BinaryPulseGenerator_tb_behav
+Built simulation snapshot Mock_KeyPadDecoder_tb_behav

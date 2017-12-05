@@ -2,11 +2,11 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Mon Dec 04 23:59:47 2017
-# Process ID: 4264
+# Start of session at: Tue Dec 05 03:40:35 2017
+# Process ID: 7464
 # Current directory: C:/Users/winiarcc/ECE/SecurityDevice/SecurityDevice.runs/synth_1
-# Command line: vivado.exe -log DisplayController_LiveTest.vds -mode batch -messageDb vivado.pb -notrace -source DisplayController_LiveTest.tcl
-# Log file: C:/Users/winiarcc/ECE/SecurityDevice/SecurityDevice.runs/synth_1/DisplayController_LiveTest.vds
+# Command line: vivado.exe -log TopLevel.vds -mode batch -messageDb vivado.pb -notrace -source TopLevel.tcl
+# Log file: C:/Users/winiarcc/ECE/SecurityDevice/SecurityDevice.runs/synth_1/TopLevel.vds
 # Journal file: C:/Users/winiarcc/ECE/SecurityDevice/SecurityDevice.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source DisplayController_LiveTest.tcl -notrace
+source TopLevel.tcl -notrace

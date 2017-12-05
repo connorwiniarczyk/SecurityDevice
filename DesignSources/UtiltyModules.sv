@@ -61,7 +61,7 @@ module BinaryCounter(
 
     logic [$clog2(MAXVAL):0] count;
 
-    always_ff @(posedge clk) begin : proc_
+    always_ff @(posedge clk, posedge reset) begin : proc_
         if(reset | count == MAXVAL) begin
             count <= 0;
         end else begin
