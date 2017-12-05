@@ -7,6 +7,7 @@ module KeyPadController(
         
         output logic [15:0] digits,           // 4 hexadecimal values indicating the digits entered
         output logic [3:0] digitsToDisplay,   // 4 binary values indicating which digits we want to turn on
+        output logic storageFull;             // goes high whenever 4 values have been entered
         
         output logic enter, // sends a pulse whenever E "Enter" is pressed
         output logic newPassword // sends a pulse whenever A "NewPassword" is pressed
@@ -20,7 +21,11 @@ module KeyPadController(
     //First, name some wires that the modules will use to communicate with eachother
     logic [3:0] digit_wire;
     logic valid_wire;
-    logic clear_wire;
+
+    // Each of these wires corresponds to a button
+    logic clear_wire [1:0];
+    logic enter_wire [1:0];
+    logic newPassword_wire [1:0];
     
     // Hook up our keypad decoder
     // This is our real KeyPad Decoder, which hasn't been implemented yet, instead, we want to hook up a mock controller to help with testing
@@ -45,10 +50,15 @@ module KeyPadController(
     );
 
     // Hook up button pulses
-    assign clear_wire = (digit_wire == 4'hC);
+    assign clear_wire[0] = (digit_wire == 4'hC);
+    assign enter_wire[0] = (digit_wire == 4'hE);
+    assign newPassword_wire[0] = (digit_wire == 4'hA);
 
-    // assign enter = (digit)
-     
+    // all button pulses should be fed through a LevelToPulseConverter
+    LevelToPulse clear(clk, reset, clear_wire[0], clear_wire[1]);
+    LevelToPulse enter(clk, reset, enter_wire[0], enter_wire[1]);
+    LevelToPulse newPassword(clk, reset, newPassword_wire[0], newPassword_wire[1]);
+  
 endmodule
 
 
@@ -79,7 +89,7 @@ module DigitStore(
     always_ff @(posedge clk) begin
         if(reset)               digits = {5'b00000, 5'b00000, 5'b00000, 5'b00000};
         else if(clear)          digits = {5'b00000, 5'b00000, 5'b00000, 5'b00000};
-        //TODO: This module should not store digits if they are more than 9, tried implementing this earlier but got some wierd behavior
+        //TODO: This module should not store digits if they are more than 9, tried implementing this earlier but got some weird behavior, giving up for now
         else if(valid) begin 
             case({digits[3][4], digits[2][4], digits[1][4], digits[0][4]})
                 4'b0000:    digits[3] = {1'b1, digit};

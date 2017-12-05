@@ -21,9 +21,15 @@ module TopLevel(
     logic [15:0] digits;
     logic [3:0] digitsToDisplay;
 
-    logic [1:0] displayMode = 2'b01;
+    logic [1:0] displayMode;
+    logic [1:0] buzzerMode;
 
     logic enter, newPassword;
+    logic setPassword;
+
+    logic match, valid;
+
+    logic [15:0] currentPassword;
 
     //Hook up DisplayController
     Display display(
@@ -36,8 +42,25 @@ module TopLevel(
     KeyPadController keyPad(
         .clk(clk), .reset(reset),
         .keyPad_row(keyPad_row), .keyPad_column(keyPad_column),
-        .digits(digits), .digitsToDisplay(digitsToDisplay),
+        .digits(digits), .digitsToDisplay(digitsToDisplay), .storageFull(valid),
         .enter(enter), .newPassword(newPassword)
+    );
+
+    //Hook up ControlFSM
+    ControlFSM control(
+        .clk(clk), .reset(reset),
+        .enter(enter), .newPassword(newPassword),
+        .match(match), .valid(valid),
+        .buzzerMode (buzzerMode), .displayMode(displayMode),
+        .setPassword(setPassword)
+    );
+
+    //Hook up PasswordStore
+    PasswordStore password(
+        .clk(clk), .reset(reset),
+        .newPassword(digits),
+        .set(setPassword),
+        .out(currentPassword)
     );
 
 endmodule
