@@ -15,37 +15,36 @@ module KeyPadController(
     
     //One hot encoded reference to the column we are currently on
     logic [3:0] column;
+
     
     //Hook up our two submodules
 
     //First, name some wires that the modules will use to communicate with eachother
     logic [3:0] digit_wire;
-    logic valid_wire;
+    logic valid_wire [1:0];
+
+    // hook up valid_wire to a LevelToPulseConverter
+    LevelToPulse ltp_valid(clk, rest, valid_wire[0], valid_wire[1]);
 
     // Each of these wires corresponds to a button
     logic clear_wire [1:0];
     logic enter_wire [1:0];
     logic newPassword_wire [1:0];
     
-    // Hook up our keypad decoder
-    // This is our real KeyPad Decoder, which hasn't been implemented yet, instead, we want to hook up a mock controller to help with testing
-    // KeyPadDecoder decoder(
-    //     .clk(clk), .reset(reset),
-    //     .keyPad_column(column),         //Inputs
-    //     .keyPad_row(keyPad_row),
-    //     .digit(digit_wire),             //Outputs
-    //     .valid(valid_wire)
-    // );
-
-    //Hook up our Mock_KeyPadDecoder
-    Mock_KeyPadDecoder(
+    //Hook up our keypad decoder
+    //This is our real KeyPad Decoder, which hasn't been implemented yet, instead, we want to hook up a mock controller to help with testing
+    Decoder_ decoder(
         .clk(clk), .reset(reset),
-        .digit(digit_wire), .valid(valid_wire)
+        .column(keyPad_column),         //Inputs
+        .row(keyPad_row),
+        .digit(digit_wire),             //Outputs
+        .valid(valid_wire[0])
     );
-    
+
+    //Hook up our 
     DigitStore store(
         .clk(clk), .reset(reset),
-        .digit(digit_wire), .valid(valid_wire), .clear(clear_wire),     //Inputs
+        .digit(digit_wire), .valid(valid_wire[1]), .clear(clear_wire[1]),     //Inputs
         .out(digits), .digitsToDisplay(digitsToDisplay), .storageFull(storageFull)                         //Outputs
     );
 
@@ -55,9 +54,16 @@ module KeyPadController(
     assign newPassword_wire[0] = (digit_wire == 4'hA);
 
     // all button pulses should be fed through a LevelToPulseConverter
-    LevelToPulse ltp_clear(clk, reset, clear_wire[0], clear_wire[1]);
+    // LevelToPulse ltp_clear(clk, reset, clear_wire[0], clear_wire[1]);
     LevelToPulse ltp_enter(clk, reset, enter_wire[0], enter_wire[1]);
     LevelToPulse ltp_newPassword(clk, reset, newPassword_wire[0], newPassword_wire[1]);
+
+    //Hook up pulse outputs
+    always_comb begin
+        enter <= (enter_wire[0] & valid_wire[1]);
+        newPassword <= (newPassword_wire[0] & valid_wire[1]);
+        clear_wire[1] <= clear_wire[0];//(clear_wire[0] & valid_wire[1]);
+    end
   
 endmodule
 
@@ -77,7 +83,7 @@ module DigitStore(
     input logic clk, reset,
     input logic [3:0] digit,    // Hexadecimal value of the digit we are trying to store
     input logic valid,           // Pulse that tells us when to shift a new digit in
-    input logic clear,          // Clears all stored digits, comes on for a clock cycle when "A" is pressed
+    input logic clear,          // Clears all stored digits, comes on for a clock cycle when "C" is pressed
     
     output logic [15:0] out,
     output logic [3:0] digitsToDisplay,
@@ -89,8 +95,7 @@ module DigitStore(
     always_ff @(posedge clk) begin
         if(reset)               digits = {5'b00000, 5'b00000, 5'b00000, 5'b00000};
         else if(clear)          digits = {5'b00000, 5'b00000, 5'b00000, 5'b00000};
-        //TODO: This module should not store digits if they are more than 9, tried implementing this earlier but got some weird behavior, giving up for now
-        else if(valid) begin 
+        else if(valid & (digit <= 9)) begin 
             case({digits[3][4], digits[2][4], digits[1][4], digits[0][4]})
                 4'b0000:    digits[3] = {1'b1, digit};
                 4'b1000:    digits[2] = {1'b1, digit};

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Tue Dec 05 03:41:55 2017
+| Date         : Wed Dec 06 04:12:14 2017
 | Host         : ECE419-1WCVM02 running 64-bit major release  (build 9200)
 | Command      : report_drc -file TopLevel_drc_routed.rpt -pb TopLevel_drc_routed.pb
 | Design       : TopLevel
@@ -23,7 +23,7 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 3
+             Violations found: 2
 
 2. REPORT DETAILS
 -----------------
@@ -42,18 +42,7 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net keyPad/nolabel_line36/pulseGenerator/counter/CLK is a gated clock net sourced by a combinational pin keyPad/nolabel_line36/pulseGenerator/counter/count[4]_i_2/O, cell keyPad/nolabel_line36/pulseGenerator/counter/count[4]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PLHOLDVIO-2#1 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT keyPad/nolabel_line36/pulseGenerator/counter/count[4]_i_2 is driving clock pin of 5 cells. This could lead to large hold time violations. First few involved cells are:
-    keyPad/nolabel_line36/counter/count_reg[0] {FDCE}
-    keyPad/nolabel_line36/counter/count_reg[4] {FDCE}
-    keyPad/nolabel_line36/counter/count_reg[1] {FDCE}
-    keyPad/nolabel_line36/counter/count_reg[2] {FDCE}
-    keyPad/nolabel_line36/counter/count_reg[3] {FDCE}
-
+Net control/__0_n_0 is a gated clock net sourced by a combinational pin control/__0/O, cell control/__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 

@@ -4,7 +4,7 @@
 ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
 
 ## Clock signal
-Bank = 35, Pin name = IO_L12P_T1_MRCC_35,					Sch name = CLK100MHZ
+##Bank = 35, Pin name = IO_L12P_T1_MRCC_35,					Sch name = CLK100MHZ
 set_property PACKAGE_PIN E3 [get_ports clk_raw]							
 set_property IOSTANDARD LVCMOS33 [get_ports clk_raw]
 create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports clk_raw]
@@ -73,10 +73,10 @@ set_property PACKAGE_PIN T8 [get_ports {buzzer}]
 #	set_property IOSTANDARD LVCMOS33 [get_ports {rc}]
 ##Bank = 34, Pin name = IO_L23N_T3_34,						Sch name = LED3
 #set_property PACKAGE_PIN T6 [get_ports {led[3]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {led[3]}]
+#	set_property IOSTANDARD LVCMOS33 [get_ports {led[3]}]
 ##Bank = 34, Pin name = IO_L12P_T1_MRCC_34,					Sch name = LED4
 #set_property PACKAGE_PIN T5 [get_ports {led[4]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {led[4]}]
+#	set_property IOSTANDARD LVCMOS33 [get_ports {led[4]}]
 ##Bank = 34, Pin name = IO_L12N_T1_MRCC_34,					Sch	name = LED5
 #set_property PACKAGE_PIN T4 [get_ports {led[5]}]					
 	#set_property IOSTANDARD LVCMOS33 [get_ports {led[5]}]
@@ -210,29 +210,29 @@ set_property PACKAGE_PIN M1 [get_ports {an[7]}]
 
 ##Pmod Header JA
 ##Bank = 15, Pin name = IO_L1N_T0_AD0N_15,					Sch name = JA1
-set_property PACKAGE_PIN B13 [get_ports {keyPad_row[0]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_row[0]}]
+set_property PACKAGE_PIN B13 [get_ports {keyPad_column[3]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_column[3]}]
 #Bank = 15, Pin name = IO_L5N_T0_AD9N_15,					Sch name = JA2
-set_property PACKAGE_PIN F14 [get_ports {keyPad_row[1]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_row[1]}]
+set_property PACKAGE_PIN F14 [get_ports {keyPad_column[2]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_column[2]}]
 #Bank = 15, Pin name = IO_L16N_T2_A27_15,					Sch name = JA3
-set_property PACKAGE_PIN D17 [get_ports {keyPad_row[2]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_row[2]}]
+set_property PACKAGE_PIN D17 [get_ports {keyPad_column[1]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_column[1]}]
 #Bank = 15, Pin name = IO_L16P_T2_A28_15,					Sch name = JA4
-set_property PACKAGE_PIN E17 [get_ports {keyPad_row[3]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_row[3]}]
+set_property PACKAGE_PIN E17 [get_ports {keyPad_column[0]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_column[0]}]
 #Bank = 15, Pin name = IO_0_15,								Sch name = JA7
-set_property PACKAGE_PIN G13 [get_ports {keyPad_row[4]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_row[4]}]
+set_property PACKAGE_PIN G13 [get_ports {keyPad_row[3]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_row[3]}]
 #Bank = 15, Pin name = IO_L20N_T3_A19_15,					Sch name = JA8
-set_property PACKAGE_PIN C17 [get_ports {keyPad_row[5]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_row[5]}]
+set_property PACKAGE_PIN C17 [get_ports {keyPad_row[2]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_row[2]}]
 #Bank = 15, Pin name = IO_L21N_T3_A17_15,					Sch name = JA9
-set_property PACKAGE_PIN D18 [get_ports {keyPad_row[6]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_row[6]}]
+set_property PACKAGE_PIN D18 [get_ports {keyPad_row[1]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_row[1]}]
 #Bank = 15, Pin name = IO_L21P_T3_DQS_15,					Sch name = JA10
-set_property PACKAGE_PIN E18 [get_ports {keyPad_row[7]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_row[7]}]
+set_property PACKAGE_PIN E18 [get_ports {keyPad_row[0]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {keyPad_row[0]}]
 
 
 

@@ -12,7 +12,7 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1181425487fs"></ZoomEndTime>
+      <ZoomEndTime time="23150001fs"></ZoomEndTime>
       <Cursor1Time time="6000000fs"></Cursor1Time>
    </zoom_setting>
    <WVObjectSize size="7" />
@@ -43,5 +43,6 @@
    <wvobject fp_name="/DigitStore_tb/digitsToDisplay" type="array">
       <obj_property name="ElementShortName">digitsToDisplay[3:0]</obj_property>
       <obj_property name="ObjectShortName">digitsToDisplay[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
 </wave_config>

@@ -24,16 +24,36 @@ module DigitStore_tb ();
 		valid = 1; #2;
 		valid = 0; #2;
 
-		digit = 4'hA;
+		digit = 4'h9;
+		
+		// clear = 1;
+		valid = 1; #2;
+		// clear = 0;
+		valid = 0; #2;
+
+		digit = 4'hb;
+		// clear = 1;
+		valid = 1; #2;
+		// clear = 0;
+		valid = 0; #2;
+
+		digit = 4'h3;
+		// clear = 1;
+		valid = 1; #2;
+		// clear = 0;
+		valid = 0; #2;
+
+		digit = 4'hd;
+		// clear = 1;
+		valid = 1; #2;
+		// clear = 0;
+		valid = 0; #2;
+
+		digit = 4'h1;
 		valid = 1; #2;
 		valid = 0; #2;
 
-		valid = 1; #2;
-		valid = 0; #2;
-
-		valid = 1; #2;
-		valid = 0; #2;
-
+		digit = 4'hf;
 		valid = 1; #2;
 		valid = 0; #2;
 	end

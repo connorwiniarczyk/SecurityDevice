@@ -17,11 +17,15 @@ set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:nexys4:part0:1.1 [current_project]
 read_verilog -library xil_defaultlib -sv {
   C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/UtiltyModules.sv
+  C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv
   C:/Users/winiarcc/ECE/SecurityDevice/LiveTests/Mock_KeyPadDecoder.sv
   C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/sevenSegDec.sv
   C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv
   C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/DisplayController.sv
-  C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv
+  C:/Users/winiarcc/ECE/SecurityDevice/LiveTests/DisplayController_LiveTest.sv
+  C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/ControlFSM.sv
+  C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadDecoder.sv
+  C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/_KeyPadDecoder.sv
 }
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp

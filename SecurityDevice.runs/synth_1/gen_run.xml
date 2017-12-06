@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1512463235">
-  <File Type="PA-TCL" Name="TopLevel.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1512551451">
   <File Type="RDS-PROPCONSTRS" Name="TopLevel_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="TopLevel.tcl"/>
   <File Type="RDS-RDS" Name="TopLevel.vds"/>
   <File Type="RDS-UTIL" Name="TopLevel_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="TopLevel_utilization_synth.pb"/>
@@ -12,6 +12,14 @@
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/DesignSources/UtiltyModules.sv">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/DesignSources/TopLevel.sv">
+      <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -45,16 +53,29 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/DesignSources/TopLevel.sv">
+    <File Path="$PPRDIR/LiveTests/DisplayController_LiveTest.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/LiveTests/DisplayController_LiveTest.sv">
+    <File Path="$PPRDIR/DesignSources/ControlFSM.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/DesignSources/KeyPadDecoder.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/DesignSources/_KeyPadDecoder.sv">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

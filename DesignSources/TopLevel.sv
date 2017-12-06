@@ -31,6 +31,12 @@ module TopLevel(
 
     logic [15:0] currentPassword;
 
+    //combinational logic for valid signal
+    // assign valid = (digitsToDisplay[3] & digitsToDisplay[2] & digitsToDisplay[1] & digitsToDisplay[0]);
+
+    //combinational logic for match signal
+    //assign match = (currentPassword == digits) & valid;
+
     //Hook up DisplayController
     Display display(
         .clk(clk), .reset(reset),
@@ -62,6 +68,9 @@ module TopLevel(
         .set(setPassword),
         .out(currentPassword)
     );
+
+    // for testing
+    // assign buzzer = match;
 
 endmodule
 

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Tue Dec 05 03:41:24 2017
+| Date         : Wed Dec 06 04:11:42 2017
 | Host         : ECE419-1WCVM02 running 64-bit major release  (build 9200)
 | Command      : report_drc -file TopLevel_drc_opted.rpt
 | Design       : TopLevel
@@ -23,7 +23,7 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 2
+             Violations found: 1
 
 2. REPORT DETAILS
 -----------------
@@ -38,17 +38,6 @@ Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_des
  #where value2 is the voltage provided to configuration bank 0
 
 Refer to the device configuration user guide for more information.
-Related violations: <none>
-
-PLHOLDVIO-2#1 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT keyPad/nolabel_line36/pulseGenerator/counter/count[4]_i_2 is driving clock pin of 5 cells. This could lead to large hold time violations. First few involved cells are:
-    keyPad/nolabel_line36/counter/count_reg[0] {FDCE}
-    keyPad/nolabel_line36/counter/count_reg[4] {FDCE}
-    keyPad/nolabel_line36/counter/count_reg[1] {FDCE}
-    keyPad/nolabel_line36/counter/count_reg[2] {FDCE}
-    keyPad/nolabel_line36/counter/count_reg[3] {FDCE}
-
 Related violations: <none>
 
 

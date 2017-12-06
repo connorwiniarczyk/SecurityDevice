@@ -5,9 +5,9 @@ Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4100] "C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv" Line 76. Module DigitStore has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv" Line 78. Module DigitStore has a timescale but at least one module in design doesn't have timescale.
 WARNING: [XSIM 43-4100] "C:/Users/winiarcc/ECE/SecurityDevice/SecurityDevice.sim/sim_1/behav/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv" Line 76. Module DigitStore has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv" Line 78. Module DigitStore has a timescale but at least one module in design doesn't have timescale.
 WARNING: [XSIM 43-4100] "C:/Users/winiarcc/ECE/SecurityDevice/SecurityDevice.sim/sim_1/behav/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
