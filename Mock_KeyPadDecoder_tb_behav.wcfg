@@ -3,46 +3,48 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="DigitStore_tb_behav.wdb" id="1">
+      <db_ref path="KeyPadController_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="DigitStore_tb" />
+            <top_module name="KeyPadController_tb" />
             <top_module name="glbl" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="23150001fs"></ZoomEndTime>
-      <Cursor1Time time="6000000fs"></Cursor1Time>
+      <ZoomEndTime time="3900001fs"></ZoomEndTime>
+      <Cursor1Time time="2950000fs"></Cursor1Time>
    </zoom_setting>
    <WVObjectSize size="7" />
-   <wvobject fp_name="/DigitStore_tb/clk" type="logic">
+   <wvobject fp_name="/KeyPadController_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/DigitStore_tb/reset" type="logic">
+   <wvobject fp_name="/KeyPadController_tb/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/DigitStore_tb/digit" type="array">
-      <obj_property name="ElementShortName">digit[3:0]</obj_property>
-      <obj_property name="ObjectShortName">digit[3:0]</obj_property>
+   <wvobject fp_name="/KeyPadController_tb/row" type="array">
+      <obj_property name="ElementShortName">row[3:0]</obj_property>
+      <obj_property name="ObjectShortName">row[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/DigitStore_tb/valid" type="logic">
-      <obj_property name="ElementShortName">valid</obj_property>
-      <obj_property name="ObjectShortName">valid</obj_property>
+   <wvobject fp_name="/KeyPadController_tb/column" type="array">
+      <obj_property name="ElementShortName">column[3:0]</obj_property>
+      <obj_property name="ObjectShortName">column[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/DigitStore_tb/clear" type="logic">
-      <obj_property name="ElementShortName">clear</obj_property>
-      <obj_property name="ObjectShortName">clear</obj_property>
-   </wvobject>
-   <wvobject fp_name="/DigitStore_tb/out" type="array">
-      <obj_property name="ElementShortName">out[15:0]</obj_property>
-      <obj_property name="ObjectShortName">out[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/DigitStore_tb/digitsToDisplay" type="array">
+   <wvobject fp_name="/KeyPadController_tb/digitsToDisplay" type="array">
       <obj_property name="ElementShortName">digitsToDisplay[3:0]</obj_property>
       <obj_property name="ObjectShortName">digitsToDisplay[3:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/KeyPadController_tb/dut/store/digits" type="array">
+      <obj_property name="ElementShortName">digits[3:0][4:0]</obj_property>
+      <obj_property name="ObjectShortName">digits[3:0][4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/KeyPadController_tb/dut/store/storageFull" type="logic">
+      <obj_property name="ElementShortName">storageFull</obj_property>
+      <obj_property name="ObjectShortName">storageFull</obj_property>
    </wvobject>
 </wave_config>

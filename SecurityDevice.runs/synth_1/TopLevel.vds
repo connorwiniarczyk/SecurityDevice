@@ -2,8 +2,8 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Wed Dec 06 04:10:52 2017
-# Process ID: 2240
+# Start of session at: Wed Dec 06 21:52:38 2017
+# Process ID: 13112
 # Current directory: C:/Users/winiarcc/ECE/SecurityDevice/SecurityDevice.runs/synth_1
 # Command line: vivado.exe -log TopLevel.vds -mode batch -messageDb vivado.pb -notrace -source TopLevel.tcl
 # Log file: C:/Users/winiarcc/ECE/SecurityDevice/SecurityDevice.runs/synth_1/TopLevel.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16976 
+INFO: Helper process launched with PID 9672 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 313.875 ; gain = 107.488
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 313.945 ; gain = 106.777
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'TopLevel' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv:4]
 INFO: [Synth 8-638] synthesizing module 'clkdiv' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/UtiltyModules.sv:33]
@@ -42,23 +42,22 @@ INFO: [Synth 8-256] done synthesizing module 'BinaryCounter' (5#1) [C:/Users/win
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/_KeyPadDecoder.sv:30]
 WARNING: [Synth 8-87] always_comb on 'buttons_reg' did not result in combinational logic [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/_KeyPadDecoder.sv:32]
 INFO: [Synth 8-256] done synthesizing module 'Decoder_' (6#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/_KeyPadDecoder.sv:1]
-INFO: [Synth 8-638] synthesizing module 'DigitStore' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:82]
-INFO: [Synth 8-256] done synthesizing module 'DigitStore' (7#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:82]
+INFO: [Synth 8-638] synthesizing module 'DigitStore' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:72]
+INFO: [Synth 8-256] done synthesizing module 'DigitStore' (7#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:72]
 WARNING: [Synth 8-3848] Net rest in module/entity KeyPadController does not have driver. [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:27]
 INFO: [Synth 8-256] done synthesizing module 'KeyPadController' (8#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:3]
 INFO: [Synth 8-638] synthesizing module 'ControlFSM' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/ControlFSM.sv:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/ControlFSM.sv:45]
 WARNING: [Synth 8-87] always_comb on 'nextState_reg' did not result in combinational logic [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/ControlFSM.sv:47]
 INFO: [Synth 8-256] done synthesizing module 'ControlFSM' (9#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/ControlFSM.sv:23]
-INFO: [Synth 8-638] synthesizing module 'PasswordStore' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv:77]
-INFO: [Synth 8-256] done synthesizing module 'PasswordStore' (10#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv:77]
+INFO: [Synth 8-638] synthesizing module 'PasswordStore' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv:80]
+INFO: [Synth 8-256] done synthesizing module 'PasswordStore' (10#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv:80]
 WARNING: [Synth 8-3848] Net buzzer in module/entity TopLevel does not have driver. [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv:8]
-WARNING: [Synth 8-3848] Net match in module/entity TopLevel does not have driver. [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv:30]
 INFO: [Synth 8-256] done synthesizing module 'TopLevel' (11#1) [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv:4]
 WARNING: [Synth 8-3331] design Display has unconnected port reset
 WARNING: [Synth 8-3331] design TopLevel has unconnected port buzzer
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 350.246 ; gain = 143.859
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 351.266 ; gain = 144.098
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -69,9 +68,8 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 WARNING: [Synth 8-3295] tying undriven pin ltp_valid:reset to constant 0 [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:27]
 WARNING: [Synth 8-3295] tying undriven pin clkdiv:reset to constant 0 [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv:16]
-WARNING: [Synth 8-3295] tying undriven pin control:match to constant 0 [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/TopLevel.sv:56]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 350.246 ; gain = 143.859
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 351.266 ; gain = 144.098
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -87,22 +85,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 654.242 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 654.297 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "sclk" won't be mapped to RAM because address size (30) is larger than maximum supported(25)
 INFO: [Synth 8-5544] ROM "buttons" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -137,7 +135,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'nextState_reg' [C:/Users/wi
 INFO: [Synth 8-3354] encoded FSM with state register 'currentState_reg' using encoding 'sequential' in module 'ControlFSM'
 WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_nextState_reg' [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/ControlFSM.sv:47]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -165,7 +163,7 @@ Detailed RTL Component Info :
 	   2 Input     30 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 4     
 	   4 Input      7 Bit        Muxes := 4     
-	   2 Input      5 Bit        Muxes := 6     
+	   2 Input      5 Bit        Muxes := 5     
 	   4 Input      5 Bit        Muxes := 2     
 	   5 Input      5 Bit        Muxes := 2     
 	   3 Input      5 Bit        Muxes := 1     
@@ -230,7 +228,7 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 2     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      5 Bit        Muxes := 6     
+	   2 Input      5 Bit        Muxes := 5     
 	   4 Input      5 Bit        Muxes := 2     
 	   5 Input      5 Bit        Muxes := 2     
 	   3 Input      5 Bit        Muxes := 1     
@@ -268,16 +266,16 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 654.242 ; gain = 447.855
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "clkdiv/sclk" won't be mapped to RAM because address size (30) is larger than maximum supported(25)
 WARNING: [Synth 8-3331] design TopLevel has unconnected port buzzer
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Parallel Reinference  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 654.297 ; gain = 447.129
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -292,9 +290,9 @@ WARNING: [Synth 8-3332] Sequential element (keyPad/ltp_enter/currentState_reg[0]
 WARNING: [Synth 8-3332] Sequential element (keyPad/ltp_newPassword/currentState_reg[1]) is unused and will be removed from module TopLevel.
 WARNING: [Synth 8-3332] Sequential element (keyPad/ltp_newPassword/currentState_reg[0]) is unused and will be removed from module TopLevel.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 654.297 ; gain = 447.129
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -308,10 +306,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -323,16 +321,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 654.297 ; gain = 447.129
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -349,7 +347,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -362,7 +360,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -374,25 +372,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -409,15 +407,15 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     2|
-|2     |CARRY4 |     8|
+|2     |CARRY4 |    10|
 |3     |LUT1   |    33|
-|4     |LUT2   |     5|
-|5     |LUT3   |    19|
-|6     |LUT4   |    45|
-|7     |LUT5   |     8|
-|8     |LUT6   |    29|
+|4     |LUT2   |     2|
+|5     |LUT3   |    18|
+|6     |LUT4   |    40|
+|7     |LUT5   |    23|
+|8     |LUT6   |    30|
 |9     |FDCE   |     7|
-|10    |FDRE   |    67|
+|10    |FDRE   |    83|
 |11    |LD     |    12|
 |12    |IBUF   |     6|
 |13    |OBUF   |    19|
@@ -428,24 +426,25 @@ Report Instance Areas:
 +------+--------------+-----------------+------+
 |      |Instance      |Module           |Cells |
 +------+--------------+-----------------+------+
-|1     |top           |                 |   261|
+|1     |top           |                 |   286|
 |2     |  clkdiv      |clkdiv           |   106|
-|3     |  control     |ControlFSM       |    15|
-|4     |  display     |Display          |    28|
-|5     |  keyPad      |KeyPadController |    84|
-|6     |    decoder   |Decoder_         |    50|
-|7     |      counter |BinaryCounter    |    21|
-|8     |    ltp_valid |LevelToPulse     |     5|
-|9     |    store     |DigitStore       |    29|
+|3     |  control     |ControlFSM       |    18|
+|4     |  display     |Display          |    25|
+|5     |  keyPad      |KeyPadController |    86|
+|6     |    decoder   |Decoder_         |    49|
+|7     |      counter |BinaryCounter    |    20|
+|8     |    ltp_valid |LevelToPulse     |     4|
+|9     |    store     |DigitStore       |    33|
+|10    |  password    |PasswordStore    |    23|
 +------+--------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 654.242 ; gain = 447.855
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 654.297 ; gain = 447.129
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 654.242 ; gain = 113.641
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 654.242 ; gain = 447.855
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 654.297 ; gain = 114.918
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 654.297 ; gain = 447.129
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 26 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 28 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 5 load pin(s).
@@ -455,8 +454,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LD => LDCE (inverted pins: G): 5 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-56 Infos, 21 Warnings, 0 Critical Warnings and 0 Errors encountered.
+56 Infos, 19 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 654.242 ; gain = 421.590
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 654.242 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 06 04:11:18 2017...
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 654.297 ; gain = 421.816
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 654.297 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 06 21:53:02 2017...

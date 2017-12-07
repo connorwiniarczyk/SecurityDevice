@@ -58,13 +58,15 @@ module Decoder_ (
                endcase           
 	endcase
 
-	logic [4:0] lastButton;
-	logic [4:0] currentButton;
+	logic [4:0] lastButton = 5'b00000;
+	logic [4:0] currentButton = 5'b00000;
 	always_ff @(posedge clk) begin
+		// if there is a button being pressed, store its value in the currentbutton register
 		if(buttons[4])	currentButton = buttons;
 
 		if(count == 5) begin
-			valid = ~(currentButton == lastButton) & ~(currentButton == 5'b00000);
+			// set valid to 
+			valid = ((lastButton == 5'b00000) & ~(currentButton == 5'b00000));
 			lastButton = currentButton;
 
 			currentButton = 5'b00000;
@@ -72,12 +74,6 @@ module Decoder_ (
 		else	valid = 0;
 	end
 
-	// always_ff @(posedge (count == 5)) begin
-	// 	if(currentButton ~= lastButton)	valid = 0;
-	// 	else							valid = 1;
-	// end
-
-	// assign valid = 1;
 	assign digit = lastButton[3:0];
 
 endmodule

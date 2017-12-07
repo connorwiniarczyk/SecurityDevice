@@ -13,7 +13,7 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/Securit
 INFO: [VRFC 10-311] analyzing module sevenSegDec
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module KeyPadController
-INFO: [VRFC 10-311] analyzing module KeyPadDecoder
+INFO: [VRFC 10-2458] undeclared symbol rest, assumed default net type wire [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadController.sv:27]
 INFO: [VRFC 10-311] analyzing module DigitStore
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/DisplayController.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Display
@@ -22,6 +22,9 @@ INFO: [VRFC 10-311] analyzing module DisplayController_LiveTest
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/ControlFSM.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ControlFSM
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadDecoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+WARNING: [VRFC 10-756] identifier buttonPressed is used before its declaration [C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadDecoder.sv:18]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/_KeyPadDecoder.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Decoder_
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/TestBenches/Mock_KeyPadDecoder_tb.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Mock_KeyPadDecoder_tb
@@ -33,5 +36,7 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/Securit
 INFO: [VRFC 10-311] analyzing module DigitStore_tb
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/TestBenches/LevelToPulse_tb.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module LevelToPulse_tb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/winiarcc/ECE/SecurityDevice/TestBenches/KeyPadController_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeyPadController_tb
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/winiarcc/ECE/SecurityDevice/SecurityDevice.sim/sim_1/behav/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl

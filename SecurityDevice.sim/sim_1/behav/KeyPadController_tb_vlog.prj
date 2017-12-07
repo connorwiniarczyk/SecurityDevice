@@ -8,11 +8,13 @@ sv xil_defaultlib  "../../../DesignSources/DisplayController.sv"
 sv xil_defaultlib  "../../../LiveTests/DisplayController_LiveTest.sv"
 sv xil_defaultlib  "../../../DesignSources/ControlFSM.sv"
 sv xil_defaultlib  "../../../DesignSources/KeyPadDecoder.sv"
+sv xil_defaultlib  "../../../DesignSources/_KeyPadDecoder.sv"
 sv xil_defaultlib  "../../../TestBenches/Mock_KeyPadDecoder_tb.sv"
 sv xil_defaultlib  "../../../TestBenches/BinaryPulseGenerator_tb.sv"
 sv xil_defaultlib  "../../../TestBenches/BinaryCounter_tb.sv"
 sv xil_defaultlib  "../../../TestBenches/DigitStore_tb.sv"
 sv xil_defaultlib  "../../../TestBenches/LevelToPulse_tb.sv"
+sv xil_defaultlib  "../../../TestBenches/KeyPadController_tb.sv"
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

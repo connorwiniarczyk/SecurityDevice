@@ -48,6 +48,8 @@ module KeyPadController(
         .out(digits), .digitsToDisplay(digitsToDisplay), .storageFull(storageFull)                         //Outputs
     );
 
+    // assign storageFull = 1'b1;
+
     // Hook up button pulses
     assign clear_wire[0] = (digit_wire == 4'hC);
     assign enter_wire[0] = (digit_wire == 4'hE);
@@ -66,18 +68,6 @@ module KeyPadController(
     end
   
 endmodule
-
-
-
-module KeyPadDecoder(
-    input logic [3:0]   keyPad_row, keyPad_column,
-    output logic [3:0]  digit, // shows the current digit being pressed
-    output logic        valid // goes high for a clock cycle whenever a button is pressed
-);
-
-endmodule
-
-
 
 module DigitStore(
     input logic clk, reset,
@@ -110,8 +100,10 @@ module DigitStore(
     //assign output values
     assign out = {digits[3][3:0], digits[2][3:0], digits[1][3:0], digits[0][3:0]};  // out should be a 16 bit representation of the hex value of each digit
     assign digitsToDisplay = {digits[3][4], digits[2][4], digits[1][4], digits[0][4]};
-    assign storageFull = (digitsToDisplay[3] & digitsToDisplay[2] & digitsToDisplay[1] & digitsToDisplay[0]);
+    assign storageFull = (digits[3][4] && digits[2][4] && digits[1][4] && digits[0][4]);
     
+    // assign storageFull = 1;
+
 endmodule
 
 

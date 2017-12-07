@@ -27,7 +27,7 @@ module TopLevel(
     logic enter, newPassword;
     logic setPassword;
 
-    logic match, valid;
+    logic match[2:0], storageFull;
 
     logic [15:0] currentPassword;
 
@@ -35,8 +35,10 @@ module TopLevel(
     // assign valid = (digitsToDisplay[3] & digitsToDisplay[2] & digitsToDisplay[1] & digitsToDisplay[0]);
 
     //combinational logic for match signal
-    //assign match = (currentPassword == digits) & valid;
-
+    assign match[0] = (currentPassword == digits); 
+    // assign match[1] = (digitsToDisplay[3] & digitsToDisplay[2] & digitsToDisplay[1] & digitsToDisplay[0]);
+    assign match[2] = match[0] && match[1];
+    
     //Hook up DisplayController
     Display display(
         .clk(clk), .reset(reset),
@@ -48,7 +50,7 @@ module TopLevel(
     KeyPadController keyPad(
         .clk(clk), .reset(reset),
         .keyPad_row(keyPad_row), .keyPad_column(keyPad_column),
-        .digits(digits), .digitsToDisplay(digitsToDisplay), .storageFull(valid),
+        .digits(digits), .digitsToDisplay(digitsToDisplay), .storageFull(match[1]),
         .enter(enter), .newPassword(newPassword)
     );
 
@@ -56,7 +58,8 @@ module TopLevel(
     ControlFSM control(
         .clk(clk), .reset(reset),
         .enter(enter), .newPassword(newPassword),
-        .match(match), .valid(valid),
+        .match(match[2]), .valid(match[1]),
+
         .buzzerMode (buzzerMode), .displayMode(displayMode),
         .setPassword(setPassword)
     );
@@ -70,7 +73,7 @@ module TopLevel(
     );
 
     // for testing
-    // assign buzzer = match;
+    // assign buzzer = match[2];
 
 endmodule
 

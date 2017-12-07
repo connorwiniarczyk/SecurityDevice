@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Wed Dec 06 04:11:44 2017
+| Date         : Wed Dec 06 21:53:32 2017
 | Host         : ECE419-1WCVM02 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TopLevel_control_sets_placed.rpt
 | Design       : TopLevel
@@ -22,7 +22,7 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    12 |
+| Number of unique control sets                            |    13 |
 | Unused register locations in slices containing registers |    34 |
 +----------------------------------------------------------+-------+
 
@@ -33,33 +33,34 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              49 |           15 |
+| No           | No                    | No                     |              51 |           16 |
 | No           | No                    | Yes                    |               7 |            2 |
-| No           | Yes                   | No                     |               5 |            2 |
-| Yes          | No                    | No                     |               5 |            1 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               4 |            2 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              20 |            6 |
+| Yes          | Yes                   | No                     |              40 |           12 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+----------------------------------+-----------------------------------+------------------------------+------------------+----------------+
-|           Clock Signal           |           Enable Signal           |       Set/Reset Signal       | Slice Load Count | Bel Load Count |
-+----------------------------------+-----------------------------------+------------------------------+------------------+----------------+
-|  control/__0_n_0                 |                                   |                              |                1 |              3 |
-|  display/Cnt_reg_n_0_[2]         |                                   |                              |                1 |              4 |
-| ~keyPad/decoder/counter/count[2] |                                   |                              |                2 |              5 |
-|  clk_BUFG                        |                                   | keyPad/decoder/counter/SR[0] |                2 |              5 |
-|  clk_BUFG                        | keyPad/decoder/counter/SR[0]      |                              |                1 |              5 |
-|  clk_BUFG                        | keyPad/store/digits[0][4]_i_2_n_0 | keyPad/decoder/SR[0]         |                2 |              5 |
-|  clk_BUFG                        | keyPad/store/digits[1][4]_i_1_n_0 | keyPad/decoder/SR[0]         |                1 |              5 |
-|  clk_BUFG                        | keyPad/store/digits[2][4]_i_1_n_0 | keyPad/decoder/SR[0]         |                2 |              5 |
-|  clk_BUFG                        | keyPad/store/digits_0             | keyPad/decoder/SR[0]         |                1 |              5 |
-|  clk_BUFG                        |                                   |                              |                4 |              6 |
-|  clk_BUFG                        |                                   | reset_IBUF                   |                2 |              7 |
-|  clk_raw_IBUF_BUFG               |                                   |                              |                7 |             31 |
-+----------------------------------+-----------------------------------+------------------------------+------------------+----------------+
++------------------------------+-----------------------------------+-----------------------------------+------------------+----------------+
+|         Clock Signal         |           Enable Signal           |          Set/Reset Signal         | Slice Load Count | Bel Load Count |
++------------------------------+-----------------------------------+-----------------------------------+------------------+----------------+
+|  control/__0_n_0             |                                   |                                   |                1 |              3 |
+|  display/Cnt_reg_n_0_[2]     |                                   |                                   |                1 |              4 |
+|  clk_BUFG                    | keyPad/decoder/counter/lastButton |                                   |                2 |              4 |
+|  clk_BUFG                    | keyPad/decoder/buttons[4]         | keyPad/decoder/counter/lastButton |                2 |              4 |
+| ~keyPad/decoder/counter/Q[2] |                                   |                                   |                2 |              5 |
+|  clk_BUFG                    | keyPad/store/digits               | keyPad/decoder/SR[0]              |                2 |              5 |
+|  clk_BUFG                    | keyPad/store/digits[0][4]_i_2_n_0 | keyPad/decoder/SR[0]              |                2 |              5 |
+|  clk_BUFG                    | keyPad/store/digits[1][4]_i_1_n_0 | keyPad/decoder/SR[0]              |                2 |              5 |
+|  clk_BUFG                    | keyPad/store/digits[2][4]_i_1_n_0 | keyPad/decoder/SR[0]              |                1 |              5 |
+|  clk_BUFG                    |                                   | reset_IBUF                        |                2 |              7 |
+|  clk_BUFG                    |                                   |                                   |                5 |              8 |
+|  clk_BUFG                    | keyPad/store/E[0]                 | reset_IBUF                        |                3 |             16 |
+|  clk_raw_IBUF_BUFG           |                                   |                                   |                7 |             31 |
++------------------------------+-----------------------------------+-----------------------------------+------------------+----------------+
 
 
