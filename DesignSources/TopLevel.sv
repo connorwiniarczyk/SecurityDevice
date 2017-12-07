@@ -8,7 +8,9 @@ module TopLevel(
         output buzzer,
         output [3:0] keyPad_column,
         output [6:0] seg,   // segment pins on the seven-segment display
-        output [7:0] an     // anode pins on the seven-segment display
+        output [7:0] an,     // anode pins on the seven-segment display
+
+        output [1:0] led
     );
 
     //divide out clk signal down to 1 kHz
@@ -31,6 +33,8 @@ module TopLevel(
 
     logic [15:0] currentPassword;
 
+    logic buzzerDone;
+
     //combinational logic for valid signal
     // assign valid = (digitsToDisplay[3] & digitsToDisplay[2] & digitsToDisplay[1] & digitsToDisplay[0]);
 
@@ -49,6 +53,7 @@ module TopLevel(
     //Hook up KeyPadController
     KeyPadController keyPad(
         .clk(clk), .reset(reset),
+        .clear_external(enter),   // automatically clear the digitstore whenever enter or newPassword have been pressed
         .keyPad_row(keyPad_row), .keyPad_column(keyPad_column),
         .digits(digits), .digitsToDisplay(digitsToDisplay), .storageFull(match[1]),
         .enter(enter), .newPassword(newPassword)
@@ -59,6 +64,7 @@ module TopLevel(
         .clk(clk), .reset(reset),
         .enter(enter), .newPassword(newPassword),
         .match(match[2]), .valid(match[1]),
+        .buzzerDone(buzzerDone),
 
         .buzzerMode (buzzerMode), .displayMode(displayMode),
         .setPassword(setPassword)
@@ -72,9 +78,10 @@ module TopLevel(
         .out(currentPassword)
     );
 
-    // for testing
-    // assign buzzer = match[2];
-
+    //Hook up Buzzer
+    Buzzer buzzerController(
+        .CLK(clk_raw), .Mode(buzzerMode), .out(buzzer), .done(buzzerDone)
+    );
 endmodule
 
 module PasswordStore(

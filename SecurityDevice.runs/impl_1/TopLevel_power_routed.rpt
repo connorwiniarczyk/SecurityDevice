@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date             : Wed Dec 06 21:54:00 2017
+| Date             : Thu Dec 07 03:59:49 2017
 | Host             : ECE419-1WCVM02 running 64-bit major release  (build 9200)
 | Command          : report_power -file TopLevel_power_routed.rpt -pb TopLevel_power_summary_routed.pb -rpx TopLevel_power_routed.rpx
 | Design           : TopLevel
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.122 |
-| Dynamic (W)              | 0.025 |
+| Total On-Chip Power (W)  | 0.123 |
+| Dynamic (W)              | 0.026 |
 | Device Static (W)        | 0.097 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 84.4  |
@@ -49,17 +49,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      248 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       88 |     63400 |            0.14 |
-|   Register     |    <0.001 |      102 |    126800 |            0.08 |
-|   CARRY4       |    <0.001 |       10 |     15850 |            0.06 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |    <0.001 |      449 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      141 |     63400 |            0.22 |
+|   CARRY4       |    <0.001 |       34 |     15850 |            0.21 |
+|   Register     |    <0.001 |      211 |    126800 |            0.17 |
+|   Others       |     0.000 |       24 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       19 |       --- |             --- |
-| Signals        |    <0.001 |      212 |       --- |             --- |
-| I/O            |     0.023 |       25 |       210 |           11.90 |
+| Signals        |    <0.001 |      388 |       --- |             --- |
+| I/O            |     0.023 |       26 |       210 |           12.38 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.122 |          |           |                 |
+| Total          |     0.123 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -69,7 +69,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.017 |       0.002 |      0.015 |
+| Vccint    |       1.000 |     0.018 |       0.003 |      0.015 |
 | Vccaux    |       1.800 |     0.019 |       0.001 |      0.018 |
 | Vcco33    |       3.300 |     0.010 |       0.006 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -135,19 +135,28 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+---------------+-----------+
-| Name          | Power (W) |
-+---------------+-----------+
-| TopLevel      |     0.025 |
-|   clkdiv      |     0.001 |
-|   control     |    <0.001 |
-|   display     |    <0.001 |
-|   keyPad      |    <0.001 |
-|     decoder   |    <0.001 |
-|       counter |    <0.001 |
-|     ltp_valid |     0.000 |
-|     store     |    <0.001 |
-|   password    |     0.000 |
-+---------------+-----------+
++--------------------+-----------+
+| Name               | Power (W) |
++--------------------+-----------+
+| TopLevel           |     0.026 |
+|   buzzerController |     0.002 |
+|     bcdCnt         |     0.000 |
+|       cntr1        |     0.000 |
+|       cntr2        |     0.000 |
+|       cntr3        |     0.000 |
+|       cntr4        |     0.000 |
+|     clkDiv1000     |    <0.001 |
+|     clkDiv2k       |    <0.001 |
+|     clkDiv800      |    <0.001 |
+|   clkdiv           |    <0.001 |
+|   control          |    <0.001 |
+|   display          |    <0.001 |
+|   keyPad           |    <0.001 |
+|     decoder        |    <0.001 |
+|       counter      |    <0.001 |
+|     ltp_valid      |     0.000 |
+|     store          |    <0.001 |
+|   password         |     0.000 |
++--------------------+-----------+
 
 

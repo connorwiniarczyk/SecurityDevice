@@ -2,8 +2,8 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Wed Dec 06 21:52:38 2017
-# Process ID: 13112
+# Start of session at: Thu Dec 07 03:58:17 2017
+# Process ID: 16480
 # Current directory: C:/Users/winiarcc/ECE/SecurityDevice/SecurityDevice.runs/synth_1
 # Command line: vivado.exe -log TopLevel.vds -mode batch -messageDb vivado.pb -notrace -source TopLevel.tcl
 # Log file: C:/Users/winiarcc/ECE/SecurityDevice/SecurityDevice.runs/synth_1/TopLevel.vds

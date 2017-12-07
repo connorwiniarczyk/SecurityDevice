@@ -64,7 +64,7 @@ module Decoder(input logic [3:0]row,
                
         2'b11: case(row)    
                4'b1110: buttons = 5'b11010; //A
-               4'b1011: buttons = 5'b11100;//C
+               4'b1011: buttons = 5'b11100; //C
                default : buttons = 5'b00000;//nothing pressed
                endcase
                
@@ -79,7 +79,7 @@ endcase
                     endcase
         logic out;
         //LevelToPulseConverter holdbutton(.clk(clk),.reset(reset),.en(buttons[4]),.out(out));
-       // assign ValidPressedButton={out,buttons[3:0]};
+        //assign ValidPressedButton={out,buttons[3:0]};
         //SevenSegmenDecoder display(buttons[3:0],seg);
         
         

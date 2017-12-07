@@ -2,6 +2,7 @@
 
 module KeyPadController(
         input clk, reset,
+        logic clear_external,
         input logic [3:0]   keyPad_row,
         output logic [3:0]  keyPad_column,
         
@@ -48,15 +49,12 @@ module KeyPadController(
         .out(digits), .digitsToDisplay(digitsToDisplay), .storageFull(storageFull)                         //Outputs
     );
 
-    // assign storageFull = 1'b1;
-
     // Hook up button pulses
-    assign clear_wire[0] = (digit_wire == 4'hC);
+    assign clear_wire[0] = (digit_wire == 4'hC) | clear_external | newPassword_wire[0];
     assign enter_wire[0] = (digit_wire == 4'hE);
     assign newPassword_wire[0] = (digit_wire == 4'hA);
 
     // all button pulses should be fed through a LevelToPulseConverter
-    // LevelToPulse ltp_clear(clk, reset, clear_wire[0], clear_wire[1]);
     LevelToPulse ltp_enter(clk, reset, enter_wire[0], enter_wire[1]);
     LevelToPulse ltp_newPassword(clk, reset, newPassword_wire[0], newPassword_wire[1]);
 
@@ -72,7 +70,7 @@ endmodule
 module DigitStore(
     input logic clk, reset,
     input logic [3:0] digit,    // Hexadecimal value of the digit we are trying to store
-    input logic valid,           // Pulse that tells us when to shift a new digit in
+    input logic valid,          // Pulse that tells us when to shift a new digit in
     input logic clear,          // Clears all stored digits, comes on for a clock cycle when "C" is pressed
     
     output logic [15:0] out,
@@ -98,30 +96,8 @@ module DigitStore(
     end
     
     //assign output values
-    assign out = {digits[3][3:0], digits[2][3:0], digits[1][3:0], digits[0][3:0]};  // out should be a 16 bit representation of the hex value of each digit
+    assign out = {digits[3][3:0], digits[2][3:0], digits[1][3:0], digits[0][3:0]};      // out should be a 16 bit representation of the hex value of each digit
     assign digitsToDisplay = {digits[3][4], digits[2][4], digits[1][4], digits[0][4]};
     assign storageFull = (digits[3][4] && digits[2][4] && digits[1][4] && digits[0][4]);
     
-    // assign storageFull = 1;
-
 endmodule
-
-
-
-// generates the 4 bit keyPad_column signal
-// module ColumnGenerator (
-//     input logic clk, reset,
-//     output logic [3:0] out
-// );
-
-//     logic [3:0] oneHot_count;
-
-//     always_ff @(posedge clk) begin
-//         if(reset) begin
-//             oneHot_count <= 4'b0001;
-//         end else begin
-//              <= ;
-//         end
-//     end
-
-// endmodule

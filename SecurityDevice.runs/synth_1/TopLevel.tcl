@@ -26,6 +26,10 @@ read_verilog -library xil_defaultlib -sv {
   C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/ControlFSM.sv
   C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/KeyPadDecoder.sv
   C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/_KeyPadDecoder.sv
+  C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/bcdCounter.sv
+  C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/clkdiv.sv
+  C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/Buzzer.sv
+  C:/Users/winiarcc/ECE/SecurityDevice/DesignSources/decCntr.sv
 }
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp

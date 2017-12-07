@@ -25,6 +25,7 @@ module ControlFSM(
         input logic enter, newPassword, // These should go HIGH for 1 clock cycle when the user presses the "E" or "A" buttons on the keypad, respectively
         input logic match, // this is a boolean value that represents whether the password the user is typing matches the stored one, it should go high as soon as they match
         input logic valid, // this is a boolean value that is true whenver there are 4 digits stored in the keypad reader
+        input logic buzzerDone, 
         output logic [1:0] buzzerMode,  // a 2-bit signal that tells the buzzer module what to do.  00 is off, 01 is wrong, 10 is right, 11 is unused
         output logic [1:0] displayMode,  // a 2-bit signal that tells the display controller what to do.
         output logic setPassword        // a pulse which controls when a new password is set. When this is high, the storePassword Module should set the current Password to whatever the user has typed
@@ -50,14 +51,17 @@ module ControlFSM(
                     else                    nextState = BASE;
             
             ECUR:   if(enter & match)       nextState = NPASS;
+                    else if(enter & !match) nextState = WRONG;
                     else                    nextState = ECUR;
             
             NPASS:  if(enter & valid)       nextState = BASE;
                     else                    nextState = NPASS;
             
-            CORRECT:                        nextState = BASE;
+            CORRECT: if(buzzerDone)         nextState = BASE;
+                     else                   nextState = CORRECT;
             
-            WRONG:                          nextState = BASE;
+            WRONG:  if(buzzerDone)          nextState = BASE;
+                    else                    nextState = WRONG;
         
         endcase
         
@@ -72,12 +76,20 @@ module ControlFSM(
             default:    displayMode = 2'b00;
             
         endcase
+
+        case(currentState)
+            CORRECT:      buzzerMode = 2'b10;
+
+            WRONG:        buzzerMode = 2'b11;
+
+            default:      buzzerMode = 2'b0;
+        endcase
     end
     
     //outputs
     assign setPassword = (enter & valid & currentState == NPASS);
     
-    assign buzzerMode[0] = currentState == CORRECT;
-    assign buzzerMode[1] = currentState == WRONG;
+    //always_comb
+              
     
 endmodule
